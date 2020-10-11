@@ -191,4 +191,4 @@ How does this stuff actually work under the covers?
 While you should have everything you need to get going, the second half of these topics will cover a layer underneath just using `git`.
 
 ---
-[Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-merges-and-rebases.md)
+[Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-commits.md)
