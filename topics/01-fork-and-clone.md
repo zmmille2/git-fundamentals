@@ -29,6 +29,8 @@ To do so, run this command in your favorite terminal:
 git clone <THE LINK FROM YOUR FORK>
 ```
 
+If you chose to clone with `ssh` you should be done here - otherwise, `git` should ask for your Github credentials.
+
 If it worked, you should see a `git-fundamentals` folder appear at the location where you ran `git clone`!
 
 [Prev](00-installation-and-registration.md) - [Home](../README.md) - [Next](02-main-flow.md)
