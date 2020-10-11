@@ -1,18 +1,87 @@
-Cover the main flow.
+# Main Flow
+To really get started with `git`, let's cover the main flow.
+Note that this section is going to move fast, and there may be some unfamiliar terminology - that's ok!
+We'll cover this as a starting point, and dissect it later.
 
-`git pull`
+**Follow along in VSCode!**
 
-`git checkout -b`
+```bash
+git checkout main
+git pull
+git checkout -b <BRANCH_NAME>
+// Make changes in your favorite editor!
+git add .
+git commit -m "A message"
+git push
+// Make a pull request
+```
+## `git checkout main`
+Make sure you're on the default branch for your repository.
+**This repository uses `main`.**
 
-Make changes in your favorite editor!
+NOTE: While `main` is gaining popularity as the default branch, old repositories will likely refer to `master` here.
+On the landing page of the project, you can see the branch name near the top left.
 
-`git add .`
+![TODO: ADD IMAGE HERE](../resources/todo.png)
 
-`git commit -m "Your message here"`
+## `git pull`
+This will `pull` in the most recent changes from the remote branch.
 
-`git push`
+## `git checkout -b <BRANCH_NAME>`
+**Create a new branch called `<BRANCH_NAME>` to start working in.**
+Call it whatever you like - your name, for example.
+Notably, this will be based off the branch that you were in when you ran the command.
 
-Make a pull request
+## Make changes in your favorite editor
+You can use VSCode here if you like, or the terminal.
+**Change instances of `<BRANCH_NAME>` with whatever you called your branch!**
+
+## `git add`
+Now you have changes in your working directory.
+If you run `git status` from your `git-fundamentals` directory, you can see `git` is aware of these changes, but that they aren't staged for commit.
+
+```bash
+// TODO: get the output from the command
+```
+
+On the fourth line, `git` helpfully tells us we should `add` to update what will be committed, so make sure to run `git add topics/02-main-flow.md`.
+
+## `git commit -m "A message"`
+
+Now, your `git status` should look like this:
+
+```bash
+// TODO: get the output from the command
+```
+
+Again from `git-fundamentals`, run `git commit -m ""` with a helpful message in the quotes.
+It can be whatever you like, but there are [some great guidelines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) on how to write good ones.
+These messages help future you and developers like you!
+
+For now **let's run `git commit -m "Updates branch name variable to <BRANCH_NAME>"`** (But update that instance too).
+
+## git push
+
+Now `git status` should look like this:
+
+```bash
+// TODO: get the output from the command
+```
+
+If we run `git push`, `git` may complain about not having an upstream, and ask you to tell it what to use.
+
+```bash
+fatal: The current branch <BRANCH_NAME> has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin <BRANCH_NAME>
+```
+
+Either run the provided command, or run this:
+```bash
+git config --global push.default simple
+```
+There's a good post [here](https://stackoverflow.com/questions/948354/default-behavior-of-git-push-without-a-branch-specified) talking about why this is the case.
 
 ---
 [Prev](01-fork-and-clone.md) - [Home](../README.md) - [Next](03-resolving-conflicts.md)
