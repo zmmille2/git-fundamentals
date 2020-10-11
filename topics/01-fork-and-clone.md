@@ -31,4 +31,4 @@ git clone <THE LINK FROM YOUR FORK>
 
 If it worked, you should see a `git-fundamentals` folder appear at the location where you ran `git clone`!
 
-[Prev](00-installation-and-registration.md) - [Home](../README.md) - [Next]()
+[Prev](00-installation-and-registration.md) - [Home](../README.md) - [Next](02-main-flow.md)
