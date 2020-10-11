@@ -71,7 +71,7 @@ These messages help future you and developers like you!
 
 For now **let's run `git commit -m "Updates branch name variable to <BRANCH_NAME>"`** (But update that instance too).
 
-## git push
+## `git push`
 
 Now `git status` should look like this:
 
