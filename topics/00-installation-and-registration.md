@@ -26,4 +26,5 @@ It's a secure way to connect to servers.
 While Github can use `HTTPS` to have you login with your Github credentials on clone, you can also use an `ssh` key to verify your identity and clone files securely.
 To set up your `ssh` key, please follow [this great blog post](https://devconnected.com/how-to-setup-ssh-keys-on-github/).
 
+---
 Prev - [Home](../README.md) - [Next](01-fork-and-clone.md)
