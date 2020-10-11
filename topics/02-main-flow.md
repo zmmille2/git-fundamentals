@@ -8,7 +8,7 @@ We'll cover this as a starting point, and dissect it later.
 ```bash
 git checkout main
 git pull
-git checkout -b <BRANCH_NAME>
+git checkout -b COOLBRANCHNAMEBYZACH
 // Make changes in your favorite editor!
 git add .
 git commit -m "A message"
@@ -27,14 +27,14 @@ On the landing page of the project, you can see the branch name near the top lef
 ## `git pull`
 This will `pull` in the most recent changes from the remote branch.
 
-## `git checkout -b <BRANCH_NAME>`
-**Create a new branch called `<BRANCH_NAME>` to start working in.**
+## `git checkout -b COOLBRANCHNAMEBYZACH`
+**Create a new branch called `COOLBRANCHNAMEBYZACH` to start working in.**
 Call it whatever you like - your name, or your Github alias, for example.
 Notably, this will be based off the branch that you were in when you ran the command.
 
 ## Make changes in your favorite editor
 You can use VSCode here if you like, or the terminal.
-**Change instances of `<BRANCH_NAME>` with whatever you called your branch!**
+**Change instances of `COOLBRANCHNAMEBYZACH` with whatever you called your branch!**
 
 ## `git add`
 Now you have changes in your working directory.
@@ -69,7 +69,7 @@ Again from `git-fundamentals`, run `git commit -m ""` with a helpful message in 
 It can be whatever you like, but there are [some great guidelines](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53) on how to write good ones.
 These messages help future you and developers like you!
 
-For now **let's run `git commit -m "Updates branch name variable to <BRANCH_NAME>"`** (But update that instance too).
+For now **let's run `git commit -m "Updates branch name variable to COOLBRANCHNAMEBYZACH"`** (But update that instance too).
 
 ## `git push`
 
@@ -84,10 +84,10 @@ nothing to commit, working tree clean
 If we run `git push`, `git` may complain about not having an upstream, and ask you to tell it what to use.
 
 ```bash
-fatal: The current branch <BRANCH_NAME> has no upstream branch.
+fatal: The current branch COOLBRANCHNAMEBYZACH has no upstream branch.
 To push the current branch and set the remote as upstream, use
 
-    git push --set-upstream origin <BRANCH_NAME>
+    git push --set-upstream origin COOLBRANCHNAMEBYZACH
 ```
 
 Either run the provided command, or run this:
