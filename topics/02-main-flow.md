@@ -101,7 +101,31 @@ There's a good post [here](https://stackoverflow.com/questions/948354/default-be
 Finally, let's make a pull request showcasing these changes.
 Luckily, after a `push`, there should be a link to make a pull request right away.
 
+```bash
+zach@US0003EMPL001 git-fundamentals % git push
+Enumerating objects: 58, done.
+Counting objects: 100% (58/58), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (54/54), done.
+Writing objects: 100% (56/56), 188.93 KiB | 7.27 MiB/s, done.
+Total 56 (delta 26), reused 0 (delta 0)
+remote: Resolving deltas: 100% (26/26), done.
+remote: 
+remote: Create a pull request for 'zmmille2' on GitHub by visiting:
+remote:      https://github.com/zmmille2/git-fundamentals/pull/new/zmmille2
+remote: 
+To https://github.com/zmmille2/git-fundamentals.git
+ * [new branch]      zmmille2 -> zmmille2
+```
 
+Add a title and description, and go ahead and create it!
+
+## Summary
+
+And that's it!
+That's the main loop for using `git`.
+We've covered a lot of ground, but this should almost be enough to get started working on your own projects.
+The next section will cover what happens when things don't run quite so cleanly.
 
 ---
 [Prev](01-fork-and-clone.md) - [Home](../README.md) - [Next](03-resolving-conflicts.md)
