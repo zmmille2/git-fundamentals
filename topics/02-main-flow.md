@@ -29,7 +29,7 @@ This will `pull` in the most recent changes from the remote branch.
 
 ## `git checkout -b <BRANCH_NAME>`
 **Create a new branch called `<BRANCH_NAME>` to start working in.**
-Call it whatever you like - your name, for example.
+Call it whatever you like - your name, or your Github alias, for example.
 Notably, this will be based off the branch that you were in when you ran the command.
 
 ## Make changes in your favorite editor
@@ -41,7 +41,14 @@ Now you have changes in your working directory.
 If you run `git status` from your `git-fundamentals` directory, you can see `git` is aware of these changes, but that they aren't staged for commit.
 
 ```bash
-// TODO: get the output from the command
+zach@US0003EMPL001 git-fundamentals % git status
+On branch zmmille2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   topics/02-main-flow.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 On the fourth line, `git` helpfully tells us we should `add` to update what will be committed, so make sure to run `git add topics/02-main-flow.md`.
@@ -51,7 +58,11 @@ On the fourth line, `git` helpfully tells us we should `add` to update what will
 Now, your `git status` should look like this:
 
 ```bash
-// TODO: get the output from the command
+zach@US0003EMPL001 git-fundamentals % git status
+On branch zmmille2
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   topics/02-main-flow.md
 ```
 
 Again from `git-fundamentals`, run `git commit -m ""` with a helpful message in the quotes.
@@ -65,7 +76,9 @@ For now **let's run `git commit -m "Updates branch name variable to <BRANCH_NAME
 Now `git status` should look like this:
 
 ```bash
-// TODO: get the output from the command
+zach@US0003EMPL001 git-fundamentals % git status
+On branch zmmille2
+nothing to commit, working tree clean
 ```
 
 If we run `git push`, `git` may complain about not having an upstream, and ask you to tell it what to use.
@@ -82,6 +95,13 @@ Either run the provided command, or run this:
 git config --global push.default simple
 ```
 There's a good post [here](https://stackoverflow.com/questions/948354/default-behavior-of-git-push-without-a-branch-specified) talking about why this is the case.
+
+## Pull Requests
+
+Finally, let's make a pull request showcasing these changes.
+Luckily, after a `push`, there should be a link to make a pull request right away.
+
+
 
 ---
 [Prev](01-fork-and-clone.md) - [Home](../README.md) - [Next](03-resolving-conflicts.md)
