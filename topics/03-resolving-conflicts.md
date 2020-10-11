@@ -118,7 +118,7 @@ And let's see what `git status` looks like now:
 ```bash
 zach@US0003EMPL001 git-fundamentals % git status
 rebase in progress; onto 37ef050
-You are currently rebasing branch 'zmmille2/sample' on '37ef050'.
+You are currently rebasing branch 'zmmille2' on '37ef050'.
   (all conflicts fixed: run "git rebase --continue")
 
 Changes to be committed:
@@ -137,6 +137,58 @@ Applying: Changes the branch name to something really cool
 Great.
 Let's just try to `push` our changes...
 
+```bash
+zach@US0003EMPL001 git-fundamentals % git push
+To https://github.com/zmmille2/git-fundamentals.git
+ ! [rejected]        zmmille2 -> zmmille2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/zmmille2/git-fundamentals.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+zach@US0003EMPL001 git-fundamentals %
+```
+
+Wait, I thought we resolved the conflicts!
+Let's see what's giong on with `git status`.
+
+```bash
+zach@US0003EMPL001 git-fundamentals % git status
+On branch zmmille2
+Your branch and 'origin/zmmille2' have diverged,
+and have 2 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+nothing to commit, working tree clean
+```
+
+This is where you need to be very careful.
+Remember how `rebase` replays your commits onto the branch you're rebasing on?
+Because of the way `git` tracks changes, this made them new commits!
+
+That means that your local and remote branches differ, so you'll have to tell `git` you know what you're doing.
+
+Run `git push --force-with-lease`.
+This will force the branch to update, with some caveats.
+Needless to say, it's important to make sure you're on the right branch and have the changes you want before you do this.
+While there is also a `--force` option, `--force-with-lease` is a little safer - it checks to see if others have worked on this branch before just `force push`ing everything out.
+
+Read more about it [here](http://weiqingtoh.github.io/force-with-lease/).
+
+## Summary
+And that's it!
+You have everything you need to work with `git` now.
+You know the main dev loop, as well as a way to resolve conflicts.
+
+I know what you're thinking, though:
+Wait, that's really it?
+What was that bit at the end about `force`?
+Why do I have to be careful here?
+Why are my commits different?
+What does that even mean?
+How does this stuff actually work under the covers?
+
+While you should have everything you need to get going, the second half of these topics will cover a layer underneath just using `git`.
 
 ---
 [Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-merges-and-rebases.md)
