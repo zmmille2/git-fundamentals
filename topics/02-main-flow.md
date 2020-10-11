@@ -13,3 +13,5 @@ Make changes in your favorite editor!
 `git push`
 
 Make a pull request
+
+[Prev](01-fork-and-clone.md) - [Home](../README.md) - [Next](03-resolving-conflicts.md)

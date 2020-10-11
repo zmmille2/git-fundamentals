@@ -14,3 +14,9 @@ Alternatively, if you're coming back to the course, please feel free to navigate
 
 0. [Installation and Registration](topics/00-installation-and-registration.md)
 1. [Fork and Clone](topics/01-fork-and-clone.md)
+2. [Main Flow](topics/02-main-flow.md)
+3. [Resolving Conflicts](topics/03-resolving-conflicts.md)
+4. [Merges and Rebases](topics/04-merges-and-rebases.md)
+5. [Branches](topics/05-branches.md)
+6. [Commits](topics/06-commits.md)
+7. [Thanks](topics/07-thanks.md)
