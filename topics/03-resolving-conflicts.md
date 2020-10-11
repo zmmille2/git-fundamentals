@@ -35,7 +35,7 @@ git pull
 git checkout <BRANCH-NAME>
 git rebase main
 // resolve conflicts in your editor of choice
-git push --force-with-lease
+git push --force-with-lease // CAREFUL HERE
 // conflict resolved!
 ```
 
@@ -52,7 +52,91 @@ This one's a new command.
 We'll get into the specifics in the next section, but when you run this command, you'll see the conflict locally.
 
 ```bash
+zach@US0003EMPL001 git-fundamentals % git rebase main
+First, rewinding head to replay your work on top of it...
+Applying: Changes the branch name to something really cool
+Using index info to reconstruct a base tree...
+M       topics/02-main-flow.md
+Falling back to patching base and 3-way merge...
+Auto-merging topics/02-main-flow.md
+CONFLICT (content): Merge conflict in topics/02-main-flow.md
+error: Failed to merge in the changes.
+Patch failed at 0001 Changes the branch name to something really cool
+hint: Use 'git am --show-current-patch' to see the failed patch
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
 ```
+
+Whoa, that's a lot.
+What's going on?
+Let's just run a `git status`.
+
+```bash
+zach@US0003EMPL001 git-fundamentals % git status                                                  
+rebase in progress; onto 37ef050
+You are currently rebasing branch 'zmmille2' on '37ef050'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   topics/02-main-flow.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+The interesting bit of this is under `Unmerged paths:` where it says `both modified:   topics/02-main-flow.md`
+
+If we navigate to our `topics/02-main-flow.md` file, we can indeed see some of the conflicts `git` is telling us about.
+
+The first one should look like this, on line 12:
+```
+<<<<<<< HEAD
+git checkout -b <BRANCH-NAME>
+=======
+git checkout -b COOLBRANCHNAMEBYZACH
+>>>>>>> Changes the branch name to something really cool
+```
+
+The `<<<`, `===` and `>>>`s are just `git` telling us which branch the changes are coming from.
+Think of them like comments.
+To resolve the conflict, we just need to delete those comment characters, and pick which piece of code should go in that section.
+
+Take some time to resolve all the conflicts in the file, then make sure to save it.
+From the command above, it says to run `git add <file>...` to mark resolution, so let's do that:
+
+```bash
+git add topics/02-main-flow.md
+```
+
+And let's see what `git status` looks like now:
+
+```bash
+zach@US0003EMPL001 git-fundamentals % git status
+rebase in progress; onto 37ef050
+You are currently rebasing branch 'zmmille2/sample' on '37ef050'.
+  (all conflicts fixed: run "git rebase --continue")
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   topics/02-main-flow.md
+```
+
+Nice!
+We're almost done, now we just need to run `git rebase --continue` and...
+
+```bash
+zach@US0003EMPL001 git-fundamentals % git rebase --continue
+Applying: Changes the branch name to something really cool
+```
+
+Great.
+Let's just try to `push` our changes...
+
 
 ---
 [Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-merges-and-rebases.md)
