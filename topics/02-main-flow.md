@@ -22,7 +22,7 @@ Make sure you're on the default branch for your repository.
 NOTE: While `main` is gaining popularity as the default branch, old repositories will likely refer to `master` here.
 On the landing page of the project, you can see the branch name near the top left.
 
-![TODO: ADD IMAGE HERE](../resources/todo.png)
+![The drop-down to select the branch.](../resources/branch-name.png)
 
 ## `git pull`
 This will `pull` in the most recent changes from the remote branch.
