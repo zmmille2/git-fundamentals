@@ -179,16 +179,14 @@ Read more about it [here](http://weiqingtoh.github.io/force-with-lease/).
 And that's it!
 You have everything you need to work with `git` now.
 You know the main dev loop, as well as a way to resolve conflicts.
+This is definitely a utilitarian understanding, though.
+How is `git` reconciling these files, _exactly_?
 
-I know what you're thinking, though:
-Wait, that's really it?
-What was that bit at the end about `force`?
-Why do I have to be careful here?
-Why are my commits different?
-What does that even mean?
-How does this stuff actually work under the covers?
+### Rebasing and Merging
 
-While you should have everything you need to get going, the second half of these topics will cover a layer underneath just using `git`.
+[This post](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) explains `merge` and `rebase` better than I could.
+The `git` book also talks about [`merge` here](https://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) (this section also mentions "fast-forwards") and [`rebase` here](https://www.git-scm.com/book/en/v2/Git-Branching-Rebasing).
+Please check them out!
 
 ---
-[Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-commits.md)
+[Prev](02-main-flow.md) - [Home](../README.md) - [Next](04-thanks.md)
