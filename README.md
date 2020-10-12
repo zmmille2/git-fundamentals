@@ -1,5 +1,5 @@
 # Git Fundamentals Workshop
-Zach Miller
+By Zach Miller
 
 ## Introduction
 
@@ -8,7 +8,9 @@ We'll get you started with using git, and cover the first couple basic workflows
 
 To get started, we'll talk about the [software that you'll need installed, and the account you'll need registered](topics/00-installation-and-registration.md) to get set up for working with `git` and Github.
 
-If you already have worked with `git` in the past and know the basics of how to use the tool, but want to cover more of the theory, start with [Commits](04-commits.md)
+If you're looking for materials on the theory and inner workings of `git`, there are myriad materials all over the internet that explain things better than I could.
+As such, I've linked them throughout the material.
+If you're looking for a link and don't want to search through everything, you can alternatively just visit [the references writeup](topics/05-references.md).
 
 Alternatively, if you're coming back to the middle of the workshop, please feel free to navigate using the table of contents:
 
@@ -18,7 +20,5 @@ Alternatively, if you're coming back to the middle of the workshop, please feel 
 1. [Fork and Clone](topics/01-fork-and-clone.md)
 2. [Main Flow](topics/02-main-flow.md)
 3. [Resolving Conflicts](topics/03-resolving-conflicts.md)
-4. [Commits](topics/04-commits.md)
-6. [Branches](topics/05-branches.md)
-5. [Merges and Rebases](topics/06-merges-and-rebases.md)
-7. [Thanks](topics/07-thanks.md)
+4. [Thanks](topics/04-thanks.md)
+5. [References](topics/05-references.md)

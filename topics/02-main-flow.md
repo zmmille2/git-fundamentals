@@ -92,7 +92,7 @@ To push the current branch and set the remote as upstream, use
 
 Either run the provided command, or run this:
 ```bash
-git config --global push.default simple
+git config --global push.default current
 ```
 There's a good post [here](https://stackoverflow.com/questions/948354/default-behavior-of-git-push-without-a-branch-specified) talking about why this is the case.
 
@@ -124,8 +124,61 @@ Add a title and description, and go ahead and create it!
 
 And that's it!
 That's the main loop for using `git`.
-We've covered a lot of ground, but this should almost be enough to get started working on your own projects.
-The next section will cover what happens when things don't run quite so cleanly.
+
+What new tools did we cover in this section?
+`git pull` grabs commits from the remote branch and merges them - it's a `git fetch` and a `git merge` all in one!
+
+There's quite a few new terms there, so let's break it down.
+
+### Commits
+Commits in `git` are snapshots of files at certain times.
+While lots of people think of commits as the _changes_ to the files, that's not technically true - `git` stores _snapshots_ of the files at each commit.
+
+Read more about commits [in the `git` book](https://www.git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F), they've got a wonderful intro to them.
+
+### Branches
+Ok, so `git pull` grabs commits, that makes sense, but what is a branch now?
+A branch is a series of commits that `git` tracks under a name.
+They're great because you can work on features without affecting your copy of the main branch.
+When something breaks in the main build, you can instantly pivot gears to work on a fix, without losing track of the state of your feature branch.
+
+To start a new branch, just run `git checkout -b <BRANCH-NAME>`.
+If the branch already exists and you just want to switch to it, just skip the `-b` flag.
+
+The `git` book has [a great chapter on branching](https://www.git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell#ch03-git-branching).
+
+Worth calling out is the fact that the server has branches just like your local machine does.
+When you ran `git push`, `git` complained about not having an "upstream" branch, remember?
+
+```bash
+fatal: The current branch <BRANCH-NAME> has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin <BRANCH-NAME>
+```
+
+While you created a branch on your local machine, you hadn't created a branch on the server yet.
+`git`'s default behavior is to ignore those pushes and give you a fatal error (rude).
+
+So, when we say that `git pull` grabs changes from the remote branch, we mean the branch on the server (which `git` calls upstream, since it could be a server, or just your buddy's computer).
+That way, any changes in the project on the server will get propogated to your machine.
+
+### Fetch
+Cool, we're about halfway through the sentence.
+While we need to know what a `git merge` is, let's cover what a `fetch` is first.
+
+Because `git` strives to be decentralized, it tries to keep as many operations local as possible.
+So, when we say that you're interacting with a remote branch, sometimes `git` can be sneaky about it.
+
+`git` keeps a local copy of what its understanding of the remote branch is.
+`git fetch` updates that copy with what's actually on the server, but it doesn't put those changes in your branch yet.
+
+Read more about them [here](https://www.atlassian.com/git/tutorials/syncing/git-fetch)!
+
+### Merges
+That last bit, `git merge`, merges the work done in two different branches to the same file.
+When it can, `git` will just do this automatically for you.
+This next section will cover what happens when things don't run quite so cleanly, and we'll explore more about `merge` and other conflict resolution strategies there.
 
 ---
 [Prev](01-fork-and-clone.md) - [Home](../README.md) - [Next](03-resolving-conflicts.md)
